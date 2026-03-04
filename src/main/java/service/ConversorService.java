@@ -43,7 +43,7 @@ public class ConversorService {
             throw new RuntimeException("Moneda destino no encontrada");
         }
 
-        return monto * tasa;
+        return calcularConversion(monto, tasa);
     }
 
     private void validarMoneda(String moneda) {
@@ -51,5 +51,9 @@ public class ConversorService {
             throw new IllegalArgumentException(
                     "Moneda no permitida: " + moneda);
         }
+    }
+
+    private double calcularConversion(double monto, double tasa) {
+        return monto * tasa;
     }
 }
